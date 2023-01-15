@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'blog'
 ]
 
 MIDDLEWARE = [
@@ -67,8 +68,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
 ]
 
-CORS_ALLOWED_ORIGINS = list(default_headers) + [ 
-    'contenttype', 
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'contenttype',
 ]
 
 
@@ -139,9 +141,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
